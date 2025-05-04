@@ -2,6 +2,9 @@ using System;
 
 class Program
 {
+      static doubleAddNumber(double a, double b){
+        return a + b;
+    }
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Sandbox World!");
@@ -27,11 +30,15 @@ class Program
     // }
     // }
 
-    List(int) myNumbers = new List<int>();
-    mynumbers.add(10);
-    mynumbers.add(90);
-    mynumbers.add(43);
+    // List(int) myNumbers = new List<int>();
+    // mynumbers.add(10);
+    // mynumbers.add(90);
+    // mynumbers.add(43);
 
-    Console.WriteLine(mynumbers);
+    // Console.WriteLine(mynumbers);
+  
+
+    double total = AddNumber(123.4534, 987.1234);
+    Console.WriteLine(total);
     }
 }
