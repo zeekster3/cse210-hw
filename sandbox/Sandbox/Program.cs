@@ -1,13 +1,14 @@
 using System;
 
-class Program
-{
-      static doubleAddNumber(double a, double b){
-        return a + b;
-    }
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello Sandbox World!");
+class Program{
+    
+    //   static doubleAddNumber(double a, double b){
+    //     return a + b;
+    // }
+    static void Main(string[] args){
+
+    
+     // Console.WriteLine("Hello Sandbox World!");
 
     // This is a text
     // This is a second change
@@ -38,7 +39,18 @@ class Program
     // Console.WriteLine(mynumbers);
   
 
-    double total = AddNumber(123.4534, 987.1234);
-    Console.WriteLine(total);
+    // double total = AddNumber(123.4534, 987.1234);
+    // Console.WriteLine(total);
+    }
+    class Circle{
+        private double _radius;
+
+        void SetRadius(double radius){
+            _radius = radius;
+        }
+
+        double GetRadius(){
+            return _radius;
+        }
     }
 }
