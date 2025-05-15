@@ -25,7 +25,7 @@ namespace MyJournal{
                 Console.WriteLine();
                 Console.WriteLine("Please pick one:");
                 Console.WriteLine("1. Write Entry");
-                Console.WriteLine("2. Display Entry");
+                Console.WriteLine("2. Display Entries");
                 Console.WriteLine("3. Save Files");
                 Console.WriteLine("4. Load Files");
                 Console.WriteLine("5. Exit");

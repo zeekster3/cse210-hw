@@ -13,7 +13,7 @@ namespace MyJournal{
             Console.Write(prompt + " ");
             string journal_text = Console.ReadLine();
             string currentDate = DateTime.Now.ToString("MM/dd/yyyy");
-            entries.Add(new Entry(journal_text, currentDate));
+            entries.Add(new Entry(journal_text, prompt, currentDate));
         }
 
 
@@ -30,11 +30,11 @@ namespace MyJournal{
             string filename = Console.ReadLine();
 
             using (StreamWriter writer = new StreamWriter(filename)){
-                writer.WriteLine("Date, Text");
+                writer.WriteLine("Date, Prompt, Text");
 
                 foreach (Entry entry in entries)
                 {
-                    writer.WriteLine($"{entry.GetDate()},{entry.GetText().Replace(",", ",,")}");
+                    writer.WriteLine($"{entry.GetDate()},{entry.GetPrompt()},{entry.GetText()}");
                 }
             }
             Console.WriteLine("File Saved");
@@ -43,7 +43,7 @@ namespace MyJournal{
 
         //File Loading System
         public void LoadFromFile(){
-            Console.Write("Enter the File's name': ");
+            Console.Write("Enter the File's name: ");
             string filename = Console.ReadLine();
             entries.Clear();
 
@@ -54,8 +54,9 @@ namespace MyJournal{
                     string entryLine = reader.ReadLine();
                     string[] fields = entryLine.Split(',');
                     string date = fields[0];
-                    string journal_text = fields[1].Replace(",,", ",");
-                    entries.Add(new Entry(journal_text, date));
+                    string prompt = fields[1];
+                    string journal_text = fields[2];
+                    entries.Add(new Entry(journal_text,prompt, date));
                 }
             }
 
