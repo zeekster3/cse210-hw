@@ -7,13 +7,15 @@ namespace MyJournal
 
         public string journal_text;
         public string date;
-
+        public string rating;
         public string prompt;
 
-        public Entry(string temp_text,string temp_prompt, string temp_date){
+        public Entry(string temp_text, string temp_prompt, string temp_date, string temp_rating)
+        {
             journal_text = temp_text;
             date = temp_date;
             prompt = temp_prompt;
+            rating = temp_rating;
         }
         public string GetText(){
             return journal_text;
@@ -26,7 +28,7 @@ namespace MyJournal
             return prompt;
         }
         public override string ToString(){
-            return $"Date Written: {date}, Prompt:{prompt}\n {journal_text}\n";
+            return $"Date Written: {date}, Prompt:{prompt}, Rating:{rating}\n {journal_text}\n";
         }
     }
 }

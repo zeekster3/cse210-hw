@@ -12,8 +12,10 @@ namespace MyJournal{
         public void AddEntry(string prompt){
             Console.Write(prompt + " ");
             string journal_text = Console.ReadLine();
+            Console.Write("How would you rate your entry?(1-5)");
+            string rating = Console.ReadLine();
             string currentDate = DateTime.Now.ToString("MM/dd/yyyy");
-            entries.Add(new Entry(journal_text, prompt, currentDate));
+            entries.Add(new Entry(journal_text, prompt, currentDate, rating));
         }
 
 
@@ -56,7 +58,8 @@ namespace MyJournal{
                     string date = fields[0];
                     string prompt = fields[1];
                     string journal_text = fields[2];
-                    entries.Add(new Entry(journal_text,prompt, date));
+                    string rating = fields[3];
+                    entries.Add(new Entry(journal_text,prompt, date, rating));
                 }
             }
 
